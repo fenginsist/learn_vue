@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-on</title>
+</head>
+<body>
+<div id="app">
+  <h2>{{message}}</h2>
+  <!--当在浏览器开发者工具的 console 控制台，输入 app.message='哈哈哈'， 上面改变，下面不改变-->
+  <h2 v-once>{{message}}</h2>
+</div>
+</body>
+<script src="../../lib/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊'
+    },
+    methods: {
+    
+    }
+  })
+</script>
+</html>

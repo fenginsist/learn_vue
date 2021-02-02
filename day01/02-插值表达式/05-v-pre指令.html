@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-pre</title>
+</head>
+<body>
+
+<div id="app">
+  <h2>{{message}}</h2>
+  <!--直接显示 内容，不取model 里面的数据：{{message}}-->
+  <h2 v-pre>{{message}}</h2>
+</div>
+
+<script src="../../lib/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊'
+    }
+  })
+</script>
+
+
+</body>
+</html>
