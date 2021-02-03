@@ -11,8 +11,10 @@
 <button>按钮3</button>
 
 <script>
-  // 1.没有块级作用域引起的问题: for的块级
-  // 为什么闭包可以解决问题: 函数是一个作用域.
+  /*
+  * 1.没有块级作用域引起的问题: for的块级
+  * 为什么闭包可以解决问题: 函数是一个作用域.
+  * */
   var btns = document.getElementsByTagName('button');
   for (var i=0; i<btns.length; i++) {
     btns[i].addEventListener('click', function () {
@@ -20,7 +22,9 @@
     })
   }
 
-  // 1.情况一: ES5中没有使用闭包(错误的方式)
+  /*
+  * 1.情况一: ES5中没有使用闭包(错误的方式)
+  * */
   i = 2
   {
     // i = 0
@@ -43,7 +47,9 @@
     })
   }
 
-  // 2.情况二: ES5中使用闭包
+  /*
+  * 2.情况二: ES5中使用闭包
+  * */
   var btns = document.getElementsByTagName('button');
   for (var i=0; i<btns.length; i++) {
     (function (i) { // 0
@@ -72,7 +78,9 @@
     })
   }(2)
 
-  // ES6中的let
+  /*
+  * ES6中的let
+  * */
   const btns = document.getElementsByTagName('button')
   for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener('click', function () {

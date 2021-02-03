@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>01-块级作用域</title>
 </head>
 <body>
 
@@ -14,12 +14,16 @@
 
 <script>
   /*
-  * ES5中的var是没有块级作用域的(if/for)
-  * ES6中的let是由块级作用的(if/for)
+  * ES5中的 var 是没有块级作用域的(if/for)
+  * ES6中的 let 是由块级作用的(if/for)
   * */
 
-  // ES5之前因为if和for都没有块级作用域的概念, 所以在很多时候, 我们都必须借助于function的作用域来解决应用外面变量的问题.
-  // ES6中,加入了let, let它是有if和for的块级作用域.
+  /*
+  * ES5之前因为 if 和 for 都没有块级作用域的概念,
+  * 所以在很多时候, 我们都必须借助于function的作用域来解决应用外面变量的问题.
+  *
+  * ES6中,加入了 let, let 它是有 if 和 for 的块级作用域.
+  * */
   // 1.变量作用域: 变量在什么范围内是可用.
   // {
   //   var name = 'why';
@@ -29,45 +33,58 @@
   // console.log(name);
 
   // 2.没有块级作用域引起的问题: if的块级
-  // var func;
-  // if (true) {
-  //   var name = 'why';
-  //   func = function () {
-  //     console.log(name);
-  //   }
-  //   // func()
-  // }
-  // name = 'kobe'
-  // func()
-  // // console.log(name);
+  var func;
+  if (true) {
+    var name = 'why';
+    func = function () {
+      console.log(name);
+    }
+    func()  // 调用函数  打印出 why
+  }
+  name = 'kobe'
+  func()    // 调用函数 打印出 kobe
+  console.log(name);
 
-  var name = 'why'
-
+  console.log('-------------------------------------');
+  
+  // 函数作用域： js 中
   function abc(bbb) { // bbb = 'why'
     console.log(bbb);
   }
-
-  abc(name)
-  name = 'kobe'
+  abc(55)
+  // aaa = 'kobe'  // 改变无用
 
   // 3.没有块级作用域引起的问题: for的块级
+  // 下面这个问题，和上面的问题一样，本质一样
+  // var btns = document.getElementsByTagName('button');
+  // for (var i = 0; i < btns.length; i++) {
+  //   btns[i].addEventListener('click', function () {
+  //     console.log('第' + i + '个按钮被点击');
+  //   })
+  // }
+  // 修改后
   // 为什么闭包可以解决问题: 函数是一个作用域.
   // var btns = document.getElementsByTagName('button');
-  // for (var i=0; i<btns.length; i++) {
-  //   (function (num) { // 0
+  // for (var i = 0; i < btns.length; i++) {
+  //   (function (num) {
   //     btns[i].addEventListener('click', function () {
-  //       console.log('第' + num + '个按钮被点击');
+  //       console.log('第' + i + '个按钮被点击');
   //     })
   //   })(i)
   // }
-
+  
+  // let
   const btns = document.getElementsByTagName('button')
   for (let i = 0; i < btns.length; i++) {
     btns[i].addEventListener('click', function () {
       console.log('第' + i + '个按钮被点击');
     })
   }
-  // ES5
+
+
+  /*
+  * ES5
+  * */
   // var i = 5
   // {
   //   btns[i].addEventListener('click', function () {
@@ -101,7 +118,10 @@
   //   })
   // }
   //
-  // // ES6
+
+  /*
+  * ES6
+  * */
   // { i = 0
   //   btns[i].addEventListener('click', function () {
   //     console.log('第' + i + '个按钮被点击');
@@ -128,6 +148,7 @@
   //     console.log('第' + i + '个按钮被点击');
   //   })
   // }
+
 
 </script>
 
