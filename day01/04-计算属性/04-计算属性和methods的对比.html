@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04-计算属性和methods的对比</title>
+</head>
+<body>
+
+<div id="app">
+  <!--1.直接拼接: 语法过于繁琐-->
+  <h2>{{firstName}} {{lastName}}</h2>
+  
+  <!--2.通过定义 methods -->
+  <!--<h2>{{getFullName()}}</h2>-->
+  <!--<h2>{{getFullName()}}</h2>-->
+  <!--<h2>{{getFullName()}}</h2>-->
+  <!--<h2>{{getFullName()}}</h2>-->
+  
+  <!--3.通过 computed -->
+  <h2>{{fullName}}</h2>
+  <h2>{{fullName}}</h2>
+  <h2>{{fullName}}</h2>
+  <h2>{{fullName}}</h2>
+  
+  <!--
+    methods 会执行 4 次
+    computed 会执行 1 次， 其效率会高于 methods
+  
+  -->
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  // angular -> google
+  // TypeScript(microsoft) -> ts(类型检测)
+  // flow(facebook) ->
+  const app = new Vue({
+    el: '#app',
+    data: {
+      firstName: 'Kobe',
+      lastName: 'Bryant'
+    },
+    methods: {
+      getFullName: function () {
+        console.log('getFullName');
+        return this.firstName + ' ' + this.lastName
+      }
+    },
+    computed: {
+      fullName: function () {
+        console.log('fullName');
+        return this.firstName + ' ' + this.lastName
+      }
+    }
+  })
+
+</script>
+
+</body>
+</html>
