@@ -2,31 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>v-on的修饰符</title>
 </head>
 <body>
 
 <div id="app">
-  <!--1. .stop修饰符的使用-->
+  <!--冒泡事件：外面的事件 触发 内层的事件-->
+  <!--1. .stop修饰符的使用：阻止冒泡事件-->
   <div @click="divClick">
     aaaaaaa
     <button @click.stop="btnClick">按钮</button>
   </div>
 
-  <!--2. .prevent修饰符的使用-->
+  <!--2. .prevent 修饰符的使用：阻止默认事件-->
   <br>
   <form action="baidu">
     <input type="submit" value="提交" @click.prevent="submitClick">
   </form>
 
   <!--3. .监听某个键盘的键帽-->
-  <input type="text" @keyup.enter="keyUp">
+  <!--keyup： 监听所有按键
+      enter： 监听 enter 按键的使用-->
+  <input type="text" @keyup.enter="keyUp"><br>
 
-  <!--4. .once修饰符的使用-->
+  <!--4. .once修饰符的使用:只让第一次点击有效，以后再点无效-->
   <button @click.once="btn2Click">按钮2</button>
 </div>
 
-<script src="../js/vue.js"></script>
+<script src="../../lib/vue.js"></script>
 <script>
   const app = new Vue({
     el: '#app',

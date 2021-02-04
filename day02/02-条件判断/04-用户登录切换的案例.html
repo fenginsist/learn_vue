@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04-用户登录切换的案例</title>
+</head>
+<body>
+
+<!--
+出现的问题：
+如果我们在有输入内容的情况下，切换了类型，我们会发现文字依然显示之前的输入的内容。
+但是按道理讲，我们应该切换到另外一个input元素中了。
+在另一个input元素中，我们并没有输入内容。
+为什么会出现这个问题呢？
+-->
+
+<div id="app">
+  <span v-if="isUser">
+    <label for="username">用户账号</label>
+    <input type="text" id="username" placeholder="用户账号">
+  </span>
+  <span v-else>
+    <label for="email">用户邮箱</label>
+    <input type="text" id="email" placeholder="用户邮箱">
+  </span>
+  <button @click="isUser = !isUser">切换类型</button>
+</div>
+
+<script src="../../lib/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      isUser: true
+    }
+  })
+</script>
+
+</body>
+</html>

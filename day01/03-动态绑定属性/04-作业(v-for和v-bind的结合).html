@@ -16,7 +16,9 @@
 <div id="app">
   <ul>
     <!--<li v-for="m in movies">{{m}}</li>-->
-    <li v-for="(m, index) in movies" @click="change(index)" :class="{active: isactive}">{{index}}-{{m}}</li>
+    <li v-for="(m, index) in movies" @click="change(index)" :class="{active: currentIndex === index}">
+      {{index}}-{{m}}
+    </li>
   </ul>
 </div>
 
@@ -26,17 +28,11 @@
     el: '#app',
     data: {
       movies: ['海王', '海尔兄弟', '火影忍者', '进击的巨人'],
-      isactive: false
+      currentIndex: 0
     },
     methods: {
       change: function (index) {
-        console.log(index)
-        if (index === 0){
-          this.isactive = true;
-        }
-        if (index === 1){
-          this.isactive = true;
-        }
+        this.currentIndex = index
       }
     }
   })

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>05-用户登录切换的案例(小问题)</title>
+</head>
+<body>
+
+<!--
+问题解释：
+这是因为Vue在进行DOM渲染时，出于性能考虑，会尽可能的复用已经存在的元素，而不是重新创建新的元素。
+在上面的案例中，Vue内部会发现原来的input元素不再使用，直接作为else中的input来使用了。
+
+解决方案：
+如果我们不希望Vue出现类似重复利用的问题，可以给对应的input添加key
+并且我们需要保证key的不同
+-->
+
+<div id="app">
+  <span v-if="isUser">
+    <label for="username">用户账号</label>
+    <input type="text" id="username" placeholder="用户账号" key="username">
+  </span>
+  <span v-else>
+    <label for="email">用户邮箱</label>
+    <input type="text" id="email" placeholder="用户邮箱" key="email">
+  </span>
+  <button @click="isUser = !isUser">切换类型</button>
+</div>
+
+<script src="../../lib/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      isUser: true
+    }
+  })
+</script>
+
+</body>
+</html>

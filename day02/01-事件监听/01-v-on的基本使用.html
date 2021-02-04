@@ -10,15 +10,21 @@
   <h2>{{counter}}</h2>
   <!--<h2 v-bind:title></h2>-->
   <!--<h2 :title></h2>-->
+  
+  <!--第一种写法-->
   <!--<button v-on:click="counter++">+</button>-->
   <!--<button v-on:click="counter&#45;&#45;">-</button>-->
+  
+  <!--第二种写法-->
   <!--<button v-on:click="increment">+</button>-->
   <!--<button v-on:click="decrement">-</button>-->
+  
+  <!--第三种写法：语法糖  类似于 v-bind 等价于 ：-->
   <button @click="increment">+</button>
   <button @click="decrement">-</button>
 </div>
 
-<script src="../js/vue.js"></script>
+<script src="../../lib/vue.js"></script>
 <script>
   const app = new Vue({
     el: '#app',
@@ -26,10 +32,12 @@
       counter: 0
     },
     methods: {
-      increment() {
+      // es5 写法
+      increment: function() {
         this.counter++
       },
-      decrement() {
+      // es6 增强写法
+      decrement: function() {
         this.counter--
       }
     }
