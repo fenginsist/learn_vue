@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <!--<input type="text" v-model="message">-->
+  <!--v-bind 单向绑定，  input事件，监听用户输入的数据-->
+  <input type="text" :value="message" @input="valueChange">
+  <input type="text" :value="message" @input="message = $event.target.value">
+  <h2>{{message}}</h2>
+</div>
+
+<script src="../../lib/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊'
+    },
+    methods: {
+      valueChange(event) {
+        // event 不需要传参，会自动传值
+        console.log(event)
+        // event.target.value 表单中的输入值
+        this.message = event.target.value;
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

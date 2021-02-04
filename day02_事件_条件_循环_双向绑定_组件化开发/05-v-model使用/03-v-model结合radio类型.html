@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <label for="male">
+    <!--input表单 里面 有一个 name 属性，表单提交时，name 就是一个 key-->
+    <input type="radio" id="male" value="男" v-model="sex">男
+  </label>
+  <label for="female">
+    <input type="radio" id="female" value="女" v-model="sex">女
+  </label>
+  <h2>您选择的性别是: {{sex}}</h2>
+</div>
+
+<script src="../../lib/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '你好啊',
+      sex: '女'
+    }
+  })
+</script>
+
+</body>
+</html>

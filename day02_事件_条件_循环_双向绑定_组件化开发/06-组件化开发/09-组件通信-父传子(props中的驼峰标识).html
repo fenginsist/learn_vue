@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>09-组件通信-父传子(props中的驼峰标识)</title>
+</head>
+<body>
+
+<div id="app">
+  <cpn :c-info="info" :child-my-message="message" v-bind:class></cpn>
+</div>
+
+<template id="cpn">
+  <div>
+    <h2>{{cInfo}}</h2>
+    <h2>{{childMyMessage}}</h2>
+  </div>
+</template>
+
+<script src="../js/vue.js"></script>
+<script>
+  const cpn = {
+    template: '#cpn',
+    props: {
+      cInfo: {
+        type: Object,
+        default() {
+          return {}
+        }
+      },
+      childMyMessage: {
+        type: String,
+        default: ''
+      }
+    }
+  }
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      info: {
+        name: 'why',
+        age: 18,
+        height: 1.88
+      },
+      message: 'aaaaaa'
+    },
+    components: {
+      cpn
+    }
+  })
+</script>
+
+</body>
+</html>
