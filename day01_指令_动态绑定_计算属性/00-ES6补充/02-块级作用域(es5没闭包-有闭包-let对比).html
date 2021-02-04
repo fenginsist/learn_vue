@@ -60,19 +60,19 @@
   }
 
   i = 100000000
-  function (i) { // i = 0
+  function a(i) { // i = 0
     btns[i].addEventListener('click', function () {
       console.log('第' + i + '个按钮被点击');
     })
   }(0)
 
-  function (i) { // i = 1
+  function b(i) { // i = 1
     btns[i].addEventListener('click', function () {
       console.log('第' + i + '个按钮被点击');
     })
   }(1)
 
-  function (i) { // i = 2
+  function c(i) { // i = 2
     btns[i].addEventListener('click', function () {
       console.log('第' + i + '个按钮被点击');
     })
