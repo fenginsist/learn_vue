@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>11-组件通信-父子组件通信案例</title>
+</head>
+<body>
+
+<div id="app">
+  <cpn :number1="num1" :number2="num2" @num1change="num1change" @num2change="num2change"></cpn>
+</div>
+
+<template id="cpn">
+  <div>
+    <h2>props: {{number1}}</h2>
+    <h2>data: {{dnumber1}}</h2>
+<!--    <input type="text" v-model="dnumber1">-->
+    <input type="text" :value="dnumber1" @input="num1put">
+    <br>
+    <h2>props: {{number2}}</h2>
+    <h2>data: {{dnumber2}}</h2>
+<!--    <input type="text" v-model="dnumber2">-->
+    <input type="text" v-bind:value="dnumber2" @input="num2put">
+  </div>
+</template>
+
+<script src="../../lib/vue.js"></script>
+<script>
+  
+  /*
+  *
+  * 先 父传子
+  *   子组件再进行双向绑定（两种方式，1、v-model。 1、使用 v-bind 和 @input 事件实现双向绑定）
+  *
+  * 再 子传父
+  *   子组件向父组件传递属性（通过 $emit 事件 进行传参）
+  * */
+  
+  
+  
+  const app = new Vue({
+    el: '#app',
+    data: {
+      num1: 0,
+      num2: 0
+    },
+    methods: {
+      num1change(num1){
+        this.num1 = num1*1;
+      },
+      num2change(num2){
+        this.num2 = num2*1;
+      }
+    },
+    // 定义局部组件
+    components: {
+      cpn: {
+        template: '#cpn',
+        props: {
+          // view 中 使用 插值表达式进行渲染，所以 这里的值 也可以通过 this.number1 进行获取
+          number1: {
+            type: Number,
+            default: 'aa',
+            required: true
+          },
+          number2: {
+            type: Number,
+            default: 'bb',
+            required: true
+          }
+        },
+        data(){
+          return {
+            dnumber1: this.number1,
+            dnumber2: this.number2,
+          }
+        },
+        methods: {
+          num1put(event){
+            // 将值 赋值于  data上的值
+            this.dnumber1 = event.target.value;
+            this.$emit('num1change', this.dnumber1)
+          },
+          num2put(event){
+            this.dnumber2 = event.target.value;
+            this.$emit('num2change', this.dnumber2)
+          }
+        }
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

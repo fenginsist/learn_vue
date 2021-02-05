@@ -7,10 +7,15 @@
 <body>
 
 <div id="app">
-  <!--<cpn v-bind:cmovies="movies"></cpn>-->
-  <!--<cpn cmovies="movies" cmessage="message"></cpn>-->
+  <!--正确写法，使用第一种 props写法： 使用 v-bind 进行传值-->
+<!--  <cpn v-bind:cmessage="message" :cmovies="movies"></cpn>-->
+  
+  <!--如果不加 v-bind， 下面这个会将 message、movies 作为 字符串传递给 cmessage、movies 属性-->
+<!--  <cpn cmessage="message" cmovies="movies" ></cpn>-->
+  
+  <!--正确写法，使用第二种 props写法-->
+  <cpn v-bind:cmovies="movies"></cpn>
 
-  <cpn :cmessage="message" :cmovies="movies"></cpn>
 </div>
 
 
@@ -29,8 +34,10 @@
   // 父传子: props: properties
   const cpn = {
     template: '#cpn',
-    props: ['cmovies', 'cmessage'],
-    /*props: {
+    // 第一种写法
+    // props: ['cmovies', 'cmessage'],
+    // 第二种写法
+    props: {
       // 1.类型限制
       // cmovies: Array,
       // cmessage: String,
@@ -39,7 +46,7 @@
       cmessage: {
         type: String,
         default: 'aaaaaaaa',
-        required: true
+        required: true  // 为true时，必须要传，不传则报错
       },
       // 类型是对象或者数组时, 默认值必须是一个函数
       cmovies: {
@@ -48,7 +55,7 @@
           return []
         }
       }
-    },*/
+    },
     data() {
       return {}
     },
