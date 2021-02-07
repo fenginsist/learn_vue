@@ -5,14 +5,18 @@
   <title>04-作用域插槽的案例</title>
 </head>
 <body>
-
+<!--
+插槽的作用：当子组件的渲染方式，父组件不满意时，通过作用域 拿到子组件插槽中的数据，进行修改
+-->
 <div id="app">
   <cpn></cpn>
 
   <cpn>
-    <!--目的是获取子组件中的pLanguages-->
-    <template slot-scope="slot">
+    <!--目的是获取子组件中的pLanguages
+    vue 2.5以下版本 必须使用 template标签，以上的版本也可以使用div标签-->
+     <template slot-scope="slot">
       <!--<span v-for="item in slot.data"> - {{item}}</span>-->
+       <!--join()：数组方法，数组之间以什么进行衔接-->
       <span>{{slot.data.join(' - ')}}</span>
     </template>
   </cpn>
