@@ -19,4 +19,25 @@ require('./css/normal.css')
 require('./css/special.less')
 document.writeln('<h2>你好啊 冯凡利</h2>')
 
+// 5. 引入vue进行开发
+import Vue from 'vue'
+
+
+// 相比于 main2.js ，这里把 内容放到了 template 中
+
+const app = new Vue({
+  el: '#app',
+  // 这里 替换了 index.html 中的 div
+  template: `
+    <div>
+      <span>{{message}}</span>
+      <button>按钮</button>
+      <span>{{name}}</span>
+    </div>
+  `,
+  data: {
+    message: '冯凡利 i love you',
+    name: '冯安晨'
+  }
+})
 

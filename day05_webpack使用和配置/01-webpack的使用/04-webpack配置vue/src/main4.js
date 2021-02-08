@@ -19,4 +19,19 @@ require('./css/normal.css')
 require('./css/special.less')
 document.writeln('<h2>你好啊 冯凡利</h2>')
 
+// 5. 引入vue进行开发
+import Vue from 'vue'
+
+import App from './vue/app'
+
+/*
+* 相比较于 main3.js ，这里把 模板子组件 提出来单放在了一个 vue/app.js 文件中。
+* */
+const app = new Vue({
+  el: '#app',
+  template: `<App/>`,
+  components: {
+    App
+  }
+})
 

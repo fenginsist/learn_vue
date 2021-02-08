@@ -1,7 +1,7 @@
 {
-  "name": "webpackloader",
+  "name": "webpack_vue",
   "version": "1.0.0",
-  "description": "",
+  "description": "1. css\r ```$xslt\r npm install --save-dev css-loader@2.0.2\r npm install --save-dev style-loader@0.23.1 --force\r ```\r 1. less\r ```$xslt\r npm install less-loader@4.1.0 less@3.9.0 --save-dev --force\r ```\r 3. 图片\r ```$xslt\r npm install url-loader@1.1.2 --save-dev --force\r npm install file-loader@3.0.1 --save-dev --force\r ```",
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -19,6 +19,9 @@
     "less-loader": "^4.1.0",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
+    "vue": "^2.6.12",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.21",
     "webpack": "^3.6.0"
   }
 }

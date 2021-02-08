@@ -59,7 +59,19 @@ module.exports = {
             plugins: ['@babel/plugin-proposal-object-rest-spread']
           }
         }
+      },
+      {
+        test: /\.vue$/,
+        use: ['vue-loader']
       }
     ],
   },
+  resolve: {
+    // import 文件时，可以不写后缀，在这里配置，但是我这里不写配置不写后缀也可以成功。
+    extensions: ['.js', '.css', '.vue'],
+    // alias： 别名， $：以vue为结尾的
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
+    }
+  }
 }

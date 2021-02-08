@@ -19,4 +19,14 @@ require('./css/normal.css')
 require('./css/special.less')
 document.writeln('<h2>你好啊 冯凡利</h2>')
 
+// 5. 引入vue进行开发
+import Vue from 'vue'
+
+const app = new Vue({
+  el: '#app',
+  data: {
+    // 这里的 message  可以在 index.html 中使用，那里被注释了
+    message: '冯凡利 i love you'
+  }
+})
 
