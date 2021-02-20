@@ -102,7 +102,7 @@ You may need an appropriate loader to handle this file type.
 | .background{
 |   background-color: red;
 | }
- @ ./src/main.js 15:0-27
+ @ ./src/main1.js 15:0-27
 npm ERR! code 2
 npm ERR! path F:\ffl\webProject\study\vueStudy\day05_webpack使用和配置\01-webpack的使用\03-webpack的loader
 npm ERR! command failed
@@ -170,7 +170,7 @@ Version: webpack 3.6.0
 Time: 353ms
     Asset     Size  Chunks             Chunk Names
 bundle.js  6.41 kB       0  [emitted]  main
-   [0] ./src/main.js 358 bytes {0} [built]
+   [0] ./src/main1.js 358 bytes {0} [built]
    [1] ./src/js/mathUtils.js 148 bytes {0} [built]
    [2] ./src/js/info.js 79 bytes {0} [built]
    [3] ./src/css/normal.css 181 bytes {0} [built]

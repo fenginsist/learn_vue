@@ -15,8 +15,8 @@ Uncaught SyntaxError: Cannot use import statement outside a module
 # 二、打包
 我这里下载使用的是 webpack 4.0.0  
 
-执行打包命令： webpack ./src/main.js -o ./dist/bundle.js
+执行打包命令： webpack ./src/main1.js -o ./dist/bundle.js
 
-便自动生成 \dist\bundle.js\main.js
+便自动生成 \dist\bundle.js
 
 index.html 页面中 js 便可成功执行
