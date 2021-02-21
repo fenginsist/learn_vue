@@ -3,10 +3,13 @@
 ## 1. 打包css 的 loader
 要使用css，需要导入css-loader 和 style-loader  
 
-先安装css-loader:  解析 CSS 文件后，使用 import 加载，并且返回 CSS 代码  
+1. 先安装css-loader:  解析 CSS 文件后，使用 import 加载，并且返回 CSS 代码  
 `npm install --save-dev css-loader@2.0.2`
 
-webpack.config.js配置：
+2. 在安装style-loader:将模块的导出作为样式添加到 DOM 中
+`npm install --save-dev style-loader@0.23.1 --force`
+
+3. webpack.config.js配置：
 ```$xslt
       {
         /*
@@ -18,8 +21,7 @@ webpack.config.js配置：
       },
 ```
 
-在安装style-loader:将模块的导出作为样式添加到 DOM 中
-`npm install --save-dev style-loader@0.23.1 --force`
+
 
 ## 2. 打包 less 的 loader
 `npm install less-loader@4.1.0 less@3.9.0 --save-dev --force`
