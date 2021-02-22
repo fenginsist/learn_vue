@@ -22,7 +22,7 @@ document.writeln('<h2>你好啊 冯凡利</h2>')
 // 5. 引入vue进行开发
 import Vue from 'vue'
 
-// import App from './vue/app'
+// import App from './js/app'
 import App from './vue/App'
 
 /*

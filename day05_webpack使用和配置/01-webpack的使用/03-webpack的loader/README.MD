@@ -75,6 +75,7 @@ webpack.config.js配置：
 ```
 
 ## 4. ES6转ES5的babel
+
 `npm install -D babel-loader @babel/core @babel/preset-env`
 
 webpack.config.js配置：
