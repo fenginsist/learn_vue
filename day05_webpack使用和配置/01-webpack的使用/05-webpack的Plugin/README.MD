@@ -52,3 +52,15 @@ npm install vue-loader@13.0.0 vue-template-compiler@2.6.12 --save-dev
 ```$xslt
 npm install html-webpack-plugin@3.2.0 --save-dev
 ```
+
+## 2. 安装 uglifyjs-webpack-plugin 插件
+插件目的：
+```$xslt
+npm install uglifyjs-webpack-plugin@1.1.1 --save-dev
+```
+
+## 3. 安装 webpack-dev-server 插件
+插件目的：
+```$xslt
+npm install webpack-dev-server@2.9.3 --save-dev
+```

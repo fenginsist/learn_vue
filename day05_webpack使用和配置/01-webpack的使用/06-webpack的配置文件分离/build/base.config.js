@@ -6,7 +6,7 @@ const uglifyJsPlugin = require('uglifyjs-webpack-plugin')
 module.exports = {
     entry: './src/main.js',
     output: {
-        path: path.resolve(__dirname, 'dist'), // __dirname: 当前文件的目录
+        path: path.resolve(__dirname, '../dist'), // __dirname: 当前文件的目录
         filename: 'bundle.js',
         // publicPath: 'dist/'
     },
@@ -82,10 +82,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: 'index.html'
         }),
-        new uglifyJsPlugin()
+        // new uglifyJsPlugin()
     ],
-    devServer: {
-        contentBase: './dist',
-        inline: true
-    }
+    // devServer: {
+    //     contentBase: './dist',
+    //     inline: true
+    // }
 }
