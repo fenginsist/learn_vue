@@ -1,6 +1,11 @@
 # 02-vuecli2test
+这是使用 vue-cli2版本创建的vue 项目
 
-> vuecli2 test
+使用命令
+```$xslt
+vue init webpack my-project-name
+```
+接下来就是一些配置了
 
 ## Build Setup
 
