@@ -1,5 +1,5 @@
 # 前言
-
+.gitkeep 文件的作用： 避免空文件上传不到 GitHub 上。
 
 # 一、every day content
 ## 1. day01_指令_动态绑定_计算属性
