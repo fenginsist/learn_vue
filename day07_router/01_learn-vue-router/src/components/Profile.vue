@@ -1,16 +1,17 @@
 <template>
   <div>
-    <span>我是关于</span>
-    <span>我是关于</span>
+    <h2>我是profile组件</h2>
+    <div>{{$route.query.name}}</div>
+    <div>{{$route.query.age}}</div>
   </div>
 </template>
 
 <script>
   export default {
-    name: "About",
+    name: "Profile",
     created() {
       console.log('created');
-      // document.title = '关于'
+      // document.title = '档案'
     },
     // 活跃时，执行方法
     activated() {
