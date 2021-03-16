@@ -51,7 +51,7 @@
     05-作业的回顾和完成  
 4. 书籍购物车案例
 
-## 3. day03_双向绑定指令_组件化开发_组件化高级
+## 3. day03_双向绑定指令_组件化开发_组件化高级(slot插槽使用)
 1. v-model使用
     01-v-model的基本使用  
     02-v-model的原理  
@@ -91,6 +91,28 @@
     02-webpack的配置  
     03-webpack的loader  
     04-webpack配置vue  
+2. 02-vuecli2test  
+    使用vue脚手架@vue/cli 2 版本 命令方式 创建的项目
+3. 03-vuecli3test  
+    使用vue脚手架@vue/cli 3 版本 命令方式 创建的项目
+4. 04-vuecli3test  
+    使用vue脚手架@vue/cli 3 版本 可视化方式 创建的项目
+
+## 6. day06_两个模式_箭头函数
+1. 01_runtimecompiler  
+    使用vue脚手架@vue/cli 2 版本 命令方式 创建的项目， 创建过程中，选择的 runtimecompiler 模式
+2. 02_runtimeonly  
+    使用vue脚手架@vue/cli 2 版本 命令方式 创建的项目， 创建过程中，选择的 runtimeonly 模式
+3. 03-箭头函数  
+    01-箭头函数的基本使用.html  
+    02-箭头函数参数和返回值.html  
+    03-箭头函数中的this的使用.html  
+4. README.MD 记载了 两个模式的不同
+    
+## 7. day07_router
+1. 01_learn-vue-router  学习使用 vue-router
+2. 02-tabbar 封装组件 TarBar
+3. 03-tabbar-自定义路径 在2小节的基础上，自定义了路径，自定义位置：`build/webpack.base.conf.js` 中的 `resolve` 属性的 `alias` 属性
     
     
     
