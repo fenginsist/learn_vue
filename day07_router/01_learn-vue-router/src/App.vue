@@ -24,9 +24,9 @@
     <button @click="userClick">用户</button>
     <button @click="profileClick">档案</button>
 
-    <keep-alive exclude="Profile,User">
+<!--    <keep-alive exclude="Profile,User">-->
       <router-view/>
-    </keep-alive>
+<!--    </keep-alive>-->
     <div>我是APP中底部版权信息</div>
   </div>
 </template>
