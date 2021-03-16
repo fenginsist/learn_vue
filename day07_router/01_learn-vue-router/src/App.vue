@@ -16,7 +16,11 @@
     <router-link to="/about">关于</router-link>
     <!--    <router-link v-bind:to="'/user/'+userId" >用户</router-link>-->
     <!--    <router-link to="/profile" >档案</router-link>-->
-    <!--    <router-link v-bind:to="{path: '/profile', query: { name: 'feng', age: 18}}" >档案</router-link>-->
+    <!--    <router-link v-bind:to="{-->
+    <!--          path: '/profile/'+123,-->
+    <!--          query: { name: 'feng', age: 18}}">-->
+    <!--      档案-->
+    <!--    </router-link>-->
     <button @click="userClick">用户</button>
     <button @click="profileClick">档案</button>
 
@@ -51,20 +55,24 @@
       userClick() {
         this.$router.push(
           {path: '/user/' + this.userId},
-          onComplete => {},
-          onAbort => {}
-          )
+          onComplete => {
+          },
+          onAbort => {
+          }
+        )
       },
       profileClick() {
         this.$router.push({
-            path: '/profile',
+            path: '/profile/' + 123,
             query: {
               name: 'fengfanli',
               age: 18
             }
           },
-          onComplete => {},
-          onAbort => {}
+          onComplete => {
+          },
+          onAbort => {
+          }
         )
       }
     }

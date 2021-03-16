@@ -1,6 +1,7 @@
 <template>
   <div>
     <h2>我是profile组件</h2>
+    <div>{{$route.params.id}}</div>
     <div>{{$route.query.name}}</div>
     <div>{{$route.query.age}}</div>
   </div>

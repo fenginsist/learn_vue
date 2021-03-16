@@ -15,7 +15,7 @@
     // 活跃时，执行方法
     activated() {
       // console.log('home activated');
-      this.$router.push(this.path)
+      // this.$router.push(this.path)
     },
     // 不活跃时，执行方法
     deactivated() {

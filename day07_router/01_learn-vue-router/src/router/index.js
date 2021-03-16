@@ -64,7 +64,7 @@ const routes = [
     }
   },
   {
-    path: '/profile',
+    path: '/profile/:id',
     component: Profile,
     meta: {
       title: '档案'
