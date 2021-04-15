@@ -1,17 +1,17 @@
 <template>
   <div class="tab-bar-item" @click="itemClick">
     <div v-if="!isActive">
-      <slot  name="item-icon"></slot>
+      <slot name="item-icon"></slot>
     </div>
     <div v-else>
-      <slot  name="item-icon-active"></slot>
+      <slot name="item-icon-active"></slot>
     </div>
     <!-- :class="{active: isActive}" -->
-    <div  :style="activeStyle">
+    <div :style="activeStyle">
       <slot name="item-text"></slot>
     </div>
-<!--    <img src="../../assets/img/tabbar/home.svg" alt="">-->
-<!--    <div>首页</div>-->
+    <!--    <img src="../../assets/img/tabbar/home.svg" alt="">-->
+    <!--    <div>首页</div>-->
   </div>
 </template>
 
@@ -26,26 +26,29 @@
         default: 'red'
       }
     },
-    data(){
+    data() {
       return {
         // isActive: true,
       }
     },
     computed: {
-      isActive(){
+      isActive() {
+        // this.$route.path 获取的事当前路由的 路径
         return this.$route.path.indexOf(this.path) !== -1
       },
-      activeStyle(){
-        return this.isActive ? {color: this.activeColor}: {}
+      activeStyle() {
+        return this.isActive ? {color: this.activeColor} : {}
       }
     },
     methods: {
-      itemClick(){
+      itemClick() {
         this.$router.replace(
           {path: this.path},
-        onComplete => {},
-          onAbort => {}
-          )
+          onComplete => {
+          },
+          onAbort => {
+          }
+        )
         // console.log('itemClick')
       }
     }
@@ -53,13 +56,14 @@
 </script>
 
 <style scoped>
-  .tab-bar-item{
+  .tab-bar-item {
     flex: 1;
     text-align: center;
     height: 49px;
     font-size: 14px;
   }
-  .tab-bar-item img{
+
+  .tab-bar-item img {
     width: 24px;
     height: 24px;
     margin-top: 3px;
