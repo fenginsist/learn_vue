@@ -13,6 +13,9 @@ new Vue({
   render: h => h(App)
 })
 
+
+// 发  get  普通 请求
+
 axios({
   url: 'http://123.207.32.32:8000/home/multidata',
   method: 'get'
@@ -132,29 +135,3 @@ instance1({
 // }).then(res => {
 //   console.log('111111111111111111', res)
 // })
-
-
-// 6.
-
-import {request} from "./network/request";
-
-request({
-  url: '/home/multidata'
-}, res => {
-  console.log('111111111111111111111111111111111', res);
-}, err => {
-  console.log('222222222222222222222222222222222', ree)
-})
-
-
-request({
-  baseConfig: {
-
-  },
-  success: function (res) {
-
-  },
-  failure: function (res) {
-
-  }
-})
