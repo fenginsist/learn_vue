@@ -14,16 +14,15 @@ new Vue({
 })
 
 /*
-* 9. 封装成 request.js 第四种 方案
+* 6. 封装成 request.js 第一种 方案
 * */
 
+import {request1} from "./network/request1";
 
-import {request} from "./network/request";
-
-request({
+request1({
   url: '/home/multidata'
-}).then(res => {
-  console.log('main.js res:', res)
-}).catch(err => {
-  console.log('main.js err:',  err)
+}, res => {
+  console.log('111111111111111111111111111111111', res);
+}, err => {
+  console.log('222222222222222222222222222222222', err)
 })

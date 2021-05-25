@@ -13,17 +13,18 @@ new Vue({
   render: h => h(App)
 })
 
+
 /*
-* 9. 封装成 request.js 第四种 方案
+* 8. 封装成 request.js 第三种 方案
 * */
 
+import {request3} from "./network/request3";
 
-import {request} from "./network/request";
-
-request({
+request3({
   url: '/home/multidata'
 }).then(res => {
-  console.log('main.js res:', res)
+  console.log(res)
 }).catch(err => {
-  console.log('main.js err:',  err)
+  console.log(err)
 })
+

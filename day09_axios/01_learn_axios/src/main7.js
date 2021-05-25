@@ -14,16 +14,18 @@ new Vue({
 })
 
 /*
-* 9. 封装成 request.js 第四种 方案
+* 7. 封装成 request.js 第二种 方案
 * */
 
 
-import {request} from "./network/request";
+import {request2} from "./network/request2";
 
-request({
-  url: '/home/multidata'
-}).then(res => {
-  console.log('main.js res:', res)
-}).catch(err => {
-  console.log('main.js err:',  err)
+request2({
+  baseConfig: {},
+  success: function (res) {
+
+  },
+  failure: function (err) {
+
+  }
 })

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-export function request1(config, success, failure) {
+export function request2(config) {
 
 //  1. 创建 axios 的实例
   const instance = axios.create({
@@ -10,13 +10,14 @@ export function request1(config, success, failure) {
   })
 
 //  发送真正的网络请求
-  instance(config)
+  instance(config.baseConfig)
     .then(res => {
       // console.log(res);
-      success(res)
+      config.success(res)
     })
-    .then(err => {
+    .catch(err => {
       // console.log(err);
-      failure(err)
+      config.failure(err)
     })
+
 }

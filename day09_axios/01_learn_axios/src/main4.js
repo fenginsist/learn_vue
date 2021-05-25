@@ -13,15 +13,14 @@ new Vue({
   render: h => h(App)
 })
 
-
-
 /*
-* 3. axios 设置超时时间和 基本URL
+* 4. axios  抽取： 设置超时时间和 基本URL
 * */
 
+axios.defaults.baseURL = 'http://123.207.32.32:8000'
+axios.defaults.timeout = 5000
+
 axios.all([axios({
-  baseURL: 'http://123.207.32.32:8000',
-  timeout: 5000,
   url: '/home/multidata'
 }), axios({
   url: 'http://123.207.32.32:8000/home/data',
@@ -30,7 +29,6 @@ axios.all([axios({
     page: 5
   }
 })]).then(axios.spread((res1, res2) => {
-  console.log('6666666666666666666', res1)
-  console.log('7777777777777777777', res2)
+  console.log('8888888888888888888', res1)
+  console.log('9999999999999999999', res2)
 }))
-
