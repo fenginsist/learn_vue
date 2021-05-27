@@ -8,4 +8,4 @@ package-lock.json
 .eslintrc.js
 .eslintignore
 
-/day05_webpack使用和配置/01-webpack的使用/02-webpack的配置/node_modules
+/day05_webpack使用和配置_vuecli2和3/01-webpack的使用/02-webpack的配置/node_modules

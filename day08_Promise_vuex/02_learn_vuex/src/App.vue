@@ -13,8 +13,14 @@
 
     <h2>----------------Hello Vuex 内容-------------</h2>
     <!--子组件能调用父组件的属性，是因为父组件向子组件传值了，是有关系的，但是如果没有关系，就要使用vuex-->
-    <!--    <hello-vuex :counter="counter"/>-->
-    <hello-vuex/>
+    <hello-vuex :counter="counter"/> <!-- 显示两行-->
+    <hello-vuex/> <!--显示一行-->
+
+    <h2>----------------App 内容 state.getters 相关信息 -------------</h2>
+    <h2>counter 的平方： {{this.$store.getters.powerCounter}}</h2>
+    <h2>学生年龄大于 20： {{this.$store.getters.more20stu}}</h2>
+    <h2>学生年龄大于 20 的长度： {{this.$store.getters.more20stuLength}}</h2>
+    <h2>传入自定义年龄，返回大于传入年龄的 数据： {{this.$store.getters.moreAgeStu(12)}}</h2>
 
     <h2>----------------App 内容 state.userInfo 对象 是否是响应式 -------------</h2>
     <h2>{{this.$store.state.userInfo}}</h2>
@@ -108,7 +114,7 @@
         //   }
         // })
 
-        // 方式五：对方式三的 优化
+        // 方式五：对方式四的 优化
         this.$store
           .dispatch('a5UpdateUserInfo', '我是携带的信息')
           .then(res => {

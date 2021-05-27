@@ -85,18 +85,29 @@
 1. 01-为什么要有模块化  
 3. 02-ES6的模块化实现  
 
-## 5. day05_webpack使用和配置
+## 5. day05_webpack使用和配置_vuecli2和3
 1. 01-webpack的使用  
     01-webpack的起步  
     02-webpack的配置  
     03-webpack的loader  
     04-webpack配置vue  
+    05-webpack的Plugin  
+    06-webpack的配置文件分离  
 2. 02-vuecli2test  
-    使用vue脚手架@vue/cli 2 版本 命令方式 创建的项目
+    使用vue脚手架@vue/cli 2 版本 命令方式 创建的项目，细节看csdn博客：[https://blog.csdn.net/qq_40036754/article/details/114222522](https://blog.csdn.net/qq_40036754/article/details/114222522)
+    ```$xslt
+    vue init webpack my-project-name
+    ```
 3. 03-vuecli3test  
-    使用vue脚手架@vue/cli 3 版本 命令方式 创建的项目
+    使用vue脚手架@vue/cli 3 版本 命令方式 创建的项目，细节看csdn博客：[https://blog.csdn.net/qq_40036754/article/details/114222522](https://blog.csdn.net/qq_40036754/article/details/114222522)
+    ```$xslt
+    vue create 03-vuecli3test
+    ```
 4. 04-vuecli3test  
-    使用vue脚手架@vue/cli 3 版本 可视化方式 创建的项目
+    使用vue脚手架@vue/cli 3 版本 可视化方式 创建的项目，细节看csdn博客：[https://blog.csdn.net/qq_40036754/article/details/114222522](https://blog.csdn.net/qq_40036754/article/details/114222522)
+    ```$xslt
+    vue ui
+    ```
 
 ## 6. day06_两个模式_箭头函数
 1. 01_runtimecompiler  
@@ -107,12 +118,40 @@
     01-箭头函数的基本使用.html  
     02-箭头函数参数和返回值.html  
     03-箭头函数中的this的使用.html  
-4. README.MD 记载了 两个模式的不同
+4. README.MD 记载了 两个模式的不同和细节（important）
+    
+    
+    
     
 ## 7. day07_router
-1. 01_learn-vue-router  学习使用 vue-router
-2. 02-tabbar 封装组件 TarBar
-3. 03-tabbar-自定义路径 在2小节的基础上，自定义了路径，自定义位置：`build/webpack.base.conf.js` 中的 `resolve` 属性的 `alias` 属性
+1. 01_learn-vue-router  学习使用 vue-router  
+    细节请看博客： [vue-router学习一：什么是路由，路由分类，路由安装，路由使用，路由默认路径，history模式，默认的linkActiveClass属性，路由代码跳转](https://blog.csdn.net/qq_40036754/article/details/114758077)   
+    [vue-router学习二：动态路由（路由传递数据的一种方式），路由懒加载，嵌套路由，路由传递参数方式，导航守卫，keep-alive标签](https://blog.csdn.net/qq_40036754/article/details/114793276)
+2. 02-tabbar 封装组件 TarBar  
+    细节请看博客： [vue-router学习三：封装组件，封装TabBar组件。](https://blog.csdn.net/qq_40036754/article/details/114898378)   
+3. 03-tabbar-自定义路径，这个属于webpack的配置  
+    在第二小节2小节的基础上，自定义了路径，自定义位置：`build/webpack.base.conf.js` 中的 `resolve` 属性的 `alias` 属性
     
     
+## 8. day08_Promise_vuex
+1. 01-Promise使用  
+    01-Promise的基本使用.html
+    02-Promise的另外处理形式.html
+    03-Promise的链式调用(一).html
+    04-Promise的链式调用(二).html
+    05-Promise的all方法使用.html
+2. 02_learn_vuex
+    [Vuex学习一：了解Vuex，初始用vuex，vuex状态管理图的讲解](https://blog.csdn.net/qq_40036754/article/details/115658647)  
+    [Vuex学习二：Vuex的重点属性学习，state、mutations、getters、actions、module。](https://blog.csdn.net/qq_40036754/article/details/115704550)  
+    细节还用到 项目内的 README.md（important）
+    
+    
+## 9. day09_axios
+1. 01_learn_axios  
+    详细看项目和项目内的 README.MD 文档。
+    
+    
+    
+    
+
     
