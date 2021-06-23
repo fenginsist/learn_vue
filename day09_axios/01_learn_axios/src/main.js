@@ -14,16 +14,26 @@ new Vue({
 })
 
 /*
-* 9. 封装成 request.js 第四种 方案
+* 10 测试封装方法。
+* 编写 api/test/index.js  在这里进行封装请求方法，进行调用
 * */
 
+import {getInfo, getInfo2} from './api/test/index'
 
-import {request} from "./network/request";
+let param = {}
+getInfo(param).then(res => {
+  console.log('zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz')
+  console.log('getInfo:', JSON.stringify(res));
+}).catch(err=>{
+  console.log(err)
+})
 
-request({
-  url: '/home/multidata'
-}).then(res => {
-  console.log('main.js res:', res)
-}).catch(err => {
-  console.log('main.js err:',  err)
+getInfo2({
+  type: 'sell',
+  page: 5
+}).then(res=>{
+  console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+  console.log('getInfo2', JSON.stringify(res));
+}).catch(err=>{
+  console.log(err)
 })

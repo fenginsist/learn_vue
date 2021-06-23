@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>05-Promise的链式调用(二)-简写</title>
+</head>
+<body>
+
+<script>
+
+  new Promise((resolve, reject) => {
+    setTimeout(function () {
+      resolve('hello world')
+    }, 1000)
+  }).then(data => {
+    console.log(data)   // => Hello World
+    return data + '111'
+  }).then(data => {
+    console.log(data)   // => hello world111
+    return data + '222'
+  }).then(data => {
+    console.log(data)   // => hello world111222
+    return data + 'error'
+  }).then(data => {
+    console.log(data)   // => 没有输出
+    return Promise.resolve(data + '333')
+  }).catch(data => {
+    console.log(data)   // => hello world111222error
+    return data + '444'
+  }).then(data => {
+    console.log(data)   // => hello world111222error444
+  })
+
+
+</script>
+</body>
+</html>

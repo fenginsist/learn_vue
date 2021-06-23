@@ -21,17 +21,13 @@
     // 第一次网络请求代码
     setTimeout(() => {
       // 成功的时候调用resolve
-      // resolve('resolve Hello World')
+      // resolve('resolve Hello World') // 下面会执行 then 中代码
 
       // 失败的时候调用reject
-      reject('reject error message')
+      reject('reject error message')  // 下面会直接执行 catch 中代码
     }, 1000)
   }).then((data) => {
-    // 1.100行的处理代码
-    console.log(data);
-    console.log(data);
-    console.log(data);
-    console.log(data);
+    // 1.处理代码
     console.log(data);
   }).catch((err) => {
     console.log(err);
@@ -42,7 +38,7 @@
   * 输出的是下面 catch 里面的语句：reject error message
   *
   * 当放开 resolve('resolve Hello World')时
-  * 输出的是下面 .then() 里面的语句: 多行 resolve Hello World
+  * 输出的是下面 .then() 里面的语句:  resolve Hello World
   * */
   
 </script>

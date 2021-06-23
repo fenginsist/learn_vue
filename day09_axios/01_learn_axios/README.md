@@ -13,7 +13,10 @@
 6. main6.js、network/request1.js : 将基本的信息，如超时时间、基本URL等 封装成一个工具类，也防止以后换网络框架而带来额外的工作量，
 7. main7.js、network/request2.js : 对 request1.js 进一步封装。（但还不是最优封装）
 8. main8.js、network/request3.js : 对 request2.js 进一步封装。（但还不是最优封装）
-8. main.js、network/request.js : 对 request3.js 进一步封装。（最优封装） request.js 封装中，还进行了 请求拦截 和 响应拦截。
+9. main9.js、network/request.js : 对 request3.js 进一步封装。（最优封装） request.js 封装中，还进行了 请求拦截 和 响应拦截。
+
+// 模拟正常开发流程，
+10. main.js、api/test/index.js、network/request.js ：将test请求封装到api/test/index.js 中。然后再main.js 中调用接口。
 
 # 三、Build Setup
 
